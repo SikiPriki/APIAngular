@@ -1,19 +1,40 @@
 <style>
+
+  th {
+    background-color: #727f7a;
+    color: white;
+  }
+  
   table, th , td {
-    border: 1px solid grey;
+    border: none;
     border-collapse: collapse;
-    padding: 5px;
+    padding: 15px;
+    border-bottom: 0.5px solid #ddd;
+    font-family: Tahoma, Geneva, sans-serif;
   }
   
   table tr:nth-child(odd) {
+    border-radius: 50px;
     background-color: #f1f1f1;
   }
   
   table tr:nth-child(even) {
-    background-color: #ffffff;
+    background-color: #ffffff ;
   }
-  </style>
 
+  tbody:hover td {
+	  color: transparent;
+	  text-shadow: 0 0 3px #aaa;
+  }
+
+  tbody:hover tr:hover td {
+	  color: #444;
+	  text-shadow: 0 1px 0 #fff;
+    font-weight: bold;
+  }
+</style>
+
+<!--The table where the data is shown-->
 <table>
   <tr>
     <th>Fund Name</th>
@@ -21,11 +42,12 @@
     <th>3 months</th>
     <th>3 years</th>
   </tr>
-  <tr *ngFor="let item of testtest">
-    <td>{{item[0].name}}</td>
-    <td>{{item[0].change1m}}</td>
-    <td>{{item[0].change3m}}</td>
-    <td>{{item[0].change3y}}</td>
-    
-  </tr>
+  <tbody>
+    <tr *ngFor="let item of fundData">
+      <td>{{item[0].name}}</td>
+      <td>{{item[0].change1m}}</td>
+      <td>{{item[0].change3m}}</td>
+      <td>{{item[0].change3y}}</td>
+    </tr>
+</tbody>
 </table>
