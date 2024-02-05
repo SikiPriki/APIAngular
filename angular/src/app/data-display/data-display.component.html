@@ -1,22 +1,31 @@
-<p>data-display works!</p>
-<h3></h3>
-
-<!--USE INSTEAD NGFOR??-->
-
-
-<ul>
-  @for( name of fundName;  track name.id; ){
-    <li >
-     <p> {{ name }}</p>
-  
-    </li>
+<style>
+  table, th , td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
   }
-</ul>
-<ul>
-  @for( m of change1m;  track m.id; ){
-    <li >
-     <p> {{ m }}</p>
   
-    </li>
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
   }
-</ul>
+  
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  </style>
+
+<table>
+  <tr>
+    <th>Fund Name</th>
+    <th>1 month</th>
+    <th>3 months</th>
+    <th>3 years</th>
+  </tr>
+  <tr *ngFor="let item of testtest">
+    <td>{{item[0].name}}</td>
+    <td>{{item[0].change1m}}</td>
+    <td>{{item[0].change3m}}</td>
+    <td>{{item[0].change3y}}</td>
+    
+  </tr>
+</table>
