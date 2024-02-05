@@ -122,6 +122,17 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
@@ -149,3 +160,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
